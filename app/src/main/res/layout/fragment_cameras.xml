@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white_100"
     android:paddingHorizontal="20dp"
-    tools:context=".CamerasFragment">
+    tools:context=".presentation.ui.fragments.cameras.CamerasFragment">
 
     <TextView
         android:id="@+id/tv_title"
