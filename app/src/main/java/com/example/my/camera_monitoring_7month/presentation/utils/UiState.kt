@@ -1,6 +1,5 @@
 package com.example.my.camera_monitoring_7month.presentation.utils
 
-
 sealed class UiState<T>(
     val data: T? = null,
     val message: String? = null

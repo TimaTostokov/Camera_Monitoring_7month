@@ -2,4 +2,9 @@
     <string name="app_name">Camera_Monitoring_7month</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="myHouse">Мой дом</string>
+    <string name="Camera">Камеры</string>
+    <string name="Contacts">Комнаты</string>
+    <string name="LivindRoom">Гостиная</string>
+    <string name="CameraOnE">Камера 1</string>
 </resources>

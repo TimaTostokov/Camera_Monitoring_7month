@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginVertical="20dp"
             android:layout_marginStart="16dp"
-            android:text="Камера 1"
+            android:text="@string/CameraOnE"
             android:textColor="@color/grey"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"

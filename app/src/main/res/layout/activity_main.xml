@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Мой дом"
+            android:text="@string/myHouse"
             android:textColor="@color/black_1000"
             android:textSize="20sp" />
 
@@ -31,12 +31,12 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Камеры" />
+            android:text="@string/Camera" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Комнаты" />
+            android:text="@string/Contacts" />
 
     </com.google.android.material.tabs.TabLayout>
 
