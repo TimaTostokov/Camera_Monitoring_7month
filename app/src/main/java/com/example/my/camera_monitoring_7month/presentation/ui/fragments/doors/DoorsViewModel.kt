@@ -1,6 +1,7 @@
 package com.example.my.camera_monitoring_7month.presentation.ui.fragments.doors
 
 import androidx.lifecycle.viewModelScope
+import com.example.my.camera_monitoring_7month.data.local.db.DoorDao
 import com.example.my.camera_monitoring_7month.domain.models.DoorModel
 import com.example.my.camera_monitoring_7month.domain.usecases.doors.DeleteDoorUseCase
 import com.example.my.camera_monitoring_7month.domain.usecases.doors.GetAllDoorsUseCase
@@ -42,6 +43,10 @@ class DoorsViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             _doorsList.value = collectData { useCase() }
         }
+    }
+
+    fun onDoorsSwiped(doors: Int) = viewModelScope.launch {
+        DoorDao.delete(doors)
     }
 
 }

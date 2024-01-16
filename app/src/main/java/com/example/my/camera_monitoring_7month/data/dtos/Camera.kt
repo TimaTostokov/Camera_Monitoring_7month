@@ -25,13 +25,14 @@ data class CameraDto(
     val rec: Boolean,
     val room: String = EMPTY_STRING,
     @SerializedName("snapshot")
-    val image: String
+    val image: String,
+    val new_column:String
 )
 
 fun CameraDto.toDomainModel() =
     CameraModel(id, favorites, name, rec, room ?: EMPTY_STRING, image)
 
-fun CameraModel.toDataDto() = CameraDto(id, favorites, name, rec, room, image)
+fun CameraModel.toDataDto() = CameraDto(id, favorites, name, rec, room, image, new_column = "")
 
 fun List<CameraDto>.toDomainModel() = this.map { it.toDomainModel() }
 

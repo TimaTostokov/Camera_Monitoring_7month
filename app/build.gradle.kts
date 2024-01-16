@@ -4,6 +4,7 @@ plugins {
 
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    id("kotlin-android")
 }
 
 android {
@@ -83,4 +84,10 @@ dependencies {
     // SwipeRefreshLayout
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 
+    //RecyclerViewSwipeDecorator
+    implementation("it.xabaras.android:recyclerview-swipedecorator:1.4")
+
+    //Paging 3
+    implementation("androidx.paging:paging-runtime-ktx:3.2.1")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 }

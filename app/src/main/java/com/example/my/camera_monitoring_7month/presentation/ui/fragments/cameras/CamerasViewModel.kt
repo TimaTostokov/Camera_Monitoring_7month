@@ -1,6 +1,7 @@
 package com.example.my.camera_monitoring_7month.presentation.ui.fragments.cameras
 
 import androidx.lifecycle.viewModelScope
+import com.example.my.camera_monitoring_7month.data.local.db.CameraDao
 import com.example.my.camera_monitoring_7month.domain.models.CameraModel
 import com.example.my.camera_monitoring_7month.domain.usecases.cameras.DeleteCameraUseCase
 import com.example.my.camera_monitoring_7month.domain.usecases.cameras.GetAllCamerasUseCase
@@ -42,6 +43,10 @@ class CamerasViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             _camerasList.value = collectData { useCase() }
         }
+    }
+
+    fun onCamerasSwiped(camera: Int) = viewModelScope.launch {
+        CameraDao.delete(camera)
     }
 
 }

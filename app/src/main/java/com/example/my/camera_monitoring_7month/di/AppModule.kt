@@ -2,6 +2,8 @@ package com.example.my.camera_monitoring_7month.di
 
 import android.content.Context
 import androidx.room.Room
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.my.camera_monitoring_7month.data.local.db.CameraDao
 import com.example.my.camera_monitoring_7month.data.local.db.DoorDao
 import com.example.my.camera_monitoring_7month.data.local.db.HouseDatabase
@@ -20,10 +22,19 @@ import java.util.concurrent.TimeUnit
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
+    val MIGRATION_1_2:Migration = object : Migration(1,2){
+        override fun migrate(database: SupportSQLiteDatabase) {
+            database.execSQL("ALTER TABLE camera_table ADD COLUMN new_column TEXT")
+        }
+    }
+
     @Provides
     fun provideAppDatabase(@ApplicationContext context: Context): HouseDatabase =
         Room.databaseBuilder(context, HouseDatabase::class.java, "house database")
-            .allowMainThreadQueries().build()
+            .allowMainThreadQueries()
+            .addMigrations(MIGRATION_1_2)
+            .build()
 
     @Provides
     fun provideCameraDao(@ApplicationContext context: Context): CameraDao =
