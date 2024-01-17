@@ -43,7 +43,6 @@ object AppModule {
     @Provides
     fun provideDoorDao(houseDatabase: HouseDatabase): DoorDao = houseDatabase.getDoorDao()
 
-
     @Provides
     fun provideRetrofit(): Retrofit {
 
